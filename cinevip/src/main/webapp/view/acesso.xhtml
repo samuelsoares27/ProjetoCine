@@ -1,0 +1,83 @@
+<html lang="pt-br" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+		<meta charset="utf-8"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<link href="css/login_css.css" rel="stylesheet" id="bootstrap-css"></link>
+		<script src="js/login.js"></script>
+<title>Acessar</title>
+</head>
+<body>  <!--  style="background: #B22222;" --> 
+        <div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Acessar</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Cadastrar</a>
+							</div>
+						</div>
+						<hr/>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<h:form id="login-form" role="form" style="display: block;">
+									<div class="form-group">
+										<h:outputText value="CPF"/>
+                        				<h:inputText value="#{clienteBean.clientes().cpf}" class="form-control"/>
+									</div>
+									<div class="form-group">
+										<h:outputText value="Senha"/>
+                        				<h:inputText value="#{clienteBean.clientes().senha}" class="form-control"/>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<div class="row">
+													<div class="col-md-6"><h:commandButton action="AdmCliente" value="Cliente" class="form-control btn btn-login"/></div>
+													<div class="col-md-6"><h:commandButton action="Adm" value="ADM" class="form-control btn btn-login"/></div>
+												</div>
+											</div>												
+										
+										</div>
+									</div>
+						
+								</h:form>
+								<h:form id="register-form" role="form" style="display: none;">
+									<div class="form-group">
+										<h:outputText value="Nome" />
+										<h:inputText value="#{clienteBean.clientes().nome}" class="form-control"/>
+									</div>
+									<div class="form-group">
+										<h:outputText value="Cpf" />
+                        				<h:inputText value="#{clienteBean.clientes().cpf}" class="form-control" />
+									</div>
+									<div class="form-group">
+										<h:outputText value="Senha" />
+                        				<h:inputSecret value="#{clienteBean.clientes().senha}" class="form-control"/>	
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<h:commandButton action="#{clienteBean.criarCliente()}" value="Criar" class="form-control btn btn-register"/>
+											</div>					
+										</div>
+									</div>
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
